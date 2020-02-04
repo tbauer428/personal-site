@@ -1,3 +1,3 @@
 this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-this will be my new personal site
+personal site

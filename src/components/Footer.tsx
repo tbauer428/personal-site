@@ -1,6 +1,6 @@
-import React from "react";
-import GitHubDark from "../GitHubDark.png";
-import GitHubLight from "../GitHubLight.png";
+import React from 'react';
+import GitHubDark from '../assets/GitHubDark.png';
+import GitHubLight from '../assets/GitHubDark.png';
 
 interface FooterProps {
   theme: string;
@@ -10,13 +10,15 @@ const Footer: React.FC<FooterProps> = FooterProps => {
   return (
     <footer>
       <div>
-        <img
-          src={FooterProps.theme === "light" ? GitHubDark : GitHubLight}
-          height="32px"
-          width="32px"
-          alt="GitHub Logo"
-        ></img>
-        <a href="http://bit.ly/2ugGcBG">View this website on GitHub</a>
+        <a href="http://bit.ly/2ugGcBG">
+          <img
+            src={FooterProps.theme === 'light' ? GitHubDark : GitHubLight}
+            height="16px"
+            width="16px"
+            alt="GitHub Logo"
+          ></img>{' '}
+          github
+        </a>
       </div>
     </footer>
   );

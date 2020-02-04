@@ -1,5 +1,6 @@
-import React from "react";
-import { Button } from "semantic-ui-react";
+import React from 'react';
+import styled from 'styled-components';
+import getGravatarURL from '../utils/getGravatarURL';
 
 interface RibbonProps {
   toggleTheme: (theme: string) => void;
@@ -8,29 +9,69 @@ interface RibbonProps {
 
 const Ribbon: React.FC<RibbonProps> = ribbonProps => {
   const toggleTheme = () => {
-    if (ribbonProps.theme === "light") {
-      ribbonProps.toggleTheme("dark");
+    if (ribbonProps.theme === 'light') {
+      ribbonProps.toggleTheme('dark');
     } else {
-      ribbonProps.toggleTheme("light");
+      ribbonProps.toggleTheme('light');
     }
   };
+
+  let photoURL = getGravatarURL({
+    email: 'tom.bauer95@gmail.com',
+    size: 1024
+  });
+
+  const Img = styled.img`
+    border-radius: 50%;
+    height: 7.5rem;
+    width: 7.5rem
+    margin-bottom: 0;
+    vertical-align: center;
+   ;
+  `;
+
+  const Button = styled.span`
+    cursor: pointer;
+  `;
 
   return (
     <div
       style={{
-        fontSize: "2rem",
-        display: "flex",
-        justifyContent: "space-between"
+        fontSize: '2rem',
+        display: 'flex',
+        justifyContent: 'space-between'
       }}
     >
-      <div>journey to dev</div>
-      <div>
-        <Button
-          onClick={() => toggleTheme()}
-          color={ribbonProps.theme === "light" ? "black" : "grey"}
-          size="small"
-        >
-          {ribbonProps.theme === "light" ? "Dark Mode 🌚" : "Light Mode 🌞"}
+      <div
+        style={{
+          width: '33.33%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+        journey to dev
+      </div>
+      <div
+        style={{
+          width: '33.33%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+        <Img src={photoURL} alt="Me" />
+      </div>
+      <div
+        style={{
+          width: '33.33%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+        <Button onClick={() => toggleTheme()}>
+          {ribbonProps.theme === 'light' ? '🌚' : '🌞'}
         </Button>
       </div>
     </div>
