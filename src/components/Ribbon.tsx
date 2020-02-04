@@ -28,6 +28,7 @@ const Ribbon: React.FC<RibbonProps> = ribbonProps => {
         <Button
           onClick={() => toggleTheme()}
           color={ribbonProps.theme === "light" ? "black" : "grey"}
+          size="small"
         >
           {ribbonProps.theme === "light" ? "Dark Mode 🌚" : "Light Mode 🌞"}
         </Button>
