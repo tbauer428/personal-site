@@ -11,7 +11,8 @@ const AboutMe: React.FC = () => {
     borderBottom: '10px solid #2D3747',
     shape: 'M20,20 L20,380 L380,380 L380,20 L20,20 Z',
     opacity: 1,
-    from: { opacity: 0 }
+    from: { opacity: 0 },
+    marginTop: '2rem'
   });
   return (
     <animated.div style={props}>
