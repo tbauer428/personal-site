@@ -1,6 +1,6 @@
 import React from 'react';
 import GitHubDark from '../assets/GitHubDark.png';
-import GitHubLight from '../assets/GitHubDark.png';
+import GitHubLight from '../assets/GitHubLight.png';
 
 interface FooterProps {
   theme: string;

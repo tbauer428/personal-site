@@ -4,9 +4,10 @@ import './App.css';
 import { lightTheme, darkTheme } from './theme/theme';
 import { GlobalStyles } from './theme/global';
 import Ribbon from './components/Ribbon';
-import { Switch, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import Console from './pages/Console';
 import Footer from './components/Footer';
+import AboutMe from './pages/AboutMe';
 
 const App = () => {
   const [theme, setTheme] = useState<string>('dark');
@@ -18,6 +19,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
       <GlobalStyles />
+      <Redirect from="/" to="/console" />
       <div
         style={{
           display: 'flex',
@@ -32,8 +34,13 @@ const App = () => {
             height: '80vh'
           }}
         >
-          <Home theme={theme} />
           <Switch>
+            <Route
+              exact
+              path="/console"
+              render={() => <Console theme={theme} />}
+            />
+            <Route exact path="/aboutme" render={() => <AboutMe />} />
             <Route
               exact
               path="/linkedin"

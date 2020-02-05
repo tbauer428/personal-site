@@ -2,12 +2,12 @@ import React from 'react';
 import Terminal from 'terminal-in-react';
 import { Redirect } from 'react-router';
 
-interface HomeProps {
+interface ConsoleProps {
   theme: string;
 }
 
-const Home: React.FC<HomeProps> = HomeProps => {
-  const thingsYouCanDo = 'linkedin\n\ngithub';
+const Console: React.FC<ConsoleProps> = ConsoleProps => {
+  const thingsYouCanDo = 'about-me\n\nlinkedin\n\ngithub';
 
   const betterHelpCommand = () => {
     return thingsYouCanDo;
@@ -23,22 +23,23 @@ const Home: React.FC<HomeProps> = HomeProps => {
       }}
     >
       <Terminal
-        prompt={HomeProps.theme === 'light' ? 'black' : 'green'}
-        color={HomeProps.theme === 'light' ? 'black' : 'green'}
+        prompt={ConsoleProps.theme === 'light' ? 'black' : 'green'}
+        color={ConsoleProps.theme === 'light' ? 'black' : 'green'}
         allowTabs={false}
-        backgroundColor={HomeProps.theme === 'light' ? 'silver' : 'black'}
-        barColor={HomeProps.theme === 'light' ? 'white' : 'gray'}
+        backgroundColor={ConsoleProps.theme === 'light' ? 'white' : 'black'}
+        barColor={'gray'}
         style={{ fontWeight: 'bold', fontSize: '1.5em', width: '100%' }}
         commands={{
+          'about-me': () => <Redirect push to="/aboutme" />,
           github: () => <Redirect push to="/github" />,
           linkedin: () => <Redirect push to="/linkedin" />,
           help: betterHelpCommand,
           shutdown: () => 'what exactly do you think you are doing? 👀'
         }}
-        msg="Hello there! This is the personal website of Thomas Bauer. For a list of commands type 'help' in the console and press Enter."
+        msg="Hello there! This is the personal website of Thomas Bauer. For a list of commands type 'help' in the console and press Enter. "
       />
     </div>
   );
 };
 
-export default Home;
+export default Console;
