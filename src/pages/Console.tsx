@@ -19,7 +19,7 @@ const Console: React.FC<ConsoleProps> = ConsoleProps => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        margin: '1rem'
+        marginTop: '1rem'
       }}
     >
       <Terminal

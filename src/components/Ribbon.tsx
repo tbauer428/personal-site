@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import getGravatarURL from '../utils/getGravatarURL';
+import { Redirect } from 'react-router';
 
 interface RibbonProps {
   toggleTheme: (theme: string) => void;
@@ -32,6 +33,7 @@ const Ribbon: React.FC<RibbonProps> = ribbonProps => {
 
   const Button = styled.span`
     cursor: pointer;
+    font-size: 3rem;
   `;
 
   return (
@@ -49,9 +51,11 @@ const Ribbon: React.FC<RibbonProps> = ribbonProps => {
           justifyContent: 'center',
           alignItems: 'center'
         }}
+        onClick={() => <Redirect push to="/console" />}
       >
         journey to dev
       </div>
+
       <div
         style={{
           width: '33.33%',
