@@ -1,7 +1,6 @@
 import React from 'react';
 import Terminal from 'terminal-in-react';
 import { Redirect } from 'react-router';
-import gandalf from '../assets/gandalf.gif';
 
 interface ConsoleProps {
   theme: string;
@@ -38,7 +37,7 @@ const Console: React.FC<ConsoleProps> = ConsoleProps => {
           shutdown: () => 'what exactly do you think you are doing? 👀',
           sudo: () => (
             <img
-              src={gandalf}
+              src="https://i.imgur.com/fVDH5bN.gif"
               width="100%"
               alt="credit goes to u/BigMurph26 https://i.imgur.com/fVDH5bN.gif"
             />
