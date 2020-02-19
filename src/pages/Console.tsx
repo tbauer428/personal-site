@@ -7,7 +7,7 @@ interface ConsoleProps {
 }
 
 const Console: React.FC<ConsoleProps> = ConsoleProps => {
-  const thingsYouCanDo = 'clear\n\nabout-me\n\nlinkedin\n\ngithub';
+  const thingsYouCanDo = 'about-me\n\nlinkedin\n\ngithub\n\nclear';
 
   const betterHelpCommand = () => {
     return thingsYouCanDo;
