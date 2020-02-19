@@ -1,13 +1,14 @@
 import React from 'react';
 import Terminal from 'terminal-in-react';
 import { Redirect } from 'react-router';
+import gandalf from '../assets/gandalf.gif';
 
 interface ConsoleProps {
   theme: string;
 }
 
 const Console: React.FC<ConsoleProps> = ConsoleProps => {
-  const thingsYouCanDo = 'about-me\n\nlinkedin\n\ngithub';
+  const thingsYouCanDo = 'clear\n\nabout-me\n\nlinkedin\n\ngithub';
 
   const betterHelpCommand = () => {
     return thingsYouCanDo;
@@ -34,7 +35,14 @@ const Console: React.FC<ConsoleProps> = ConsoleProps => {
           github: () => <Redirect push to="/github" />,
           linkedin: () => <Redirect push to="/linkedin" />,
           help: betterHelpCommand,
-          shutdown: () => 'what exactly do you think you are doing? 👀'
+          shutdown: () => 'what exactly do you think you are doing? 👀',
+          sudo: () => (
+            <img
+              src={gandalf}
+              width="100%"
+              alt="credit goes to u/BigMurph26 https://i.imgur.com/fVDH5bN.gif"
+            />
+          )
         }}
         msg="Hello there! This is the personal website of Thomas Bauer. For a list of commands type 'help' in the console and press Enter. "
       />
