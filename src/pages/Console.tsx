@@ -31,11 +31,23 @@ const Console: React.FC<ConsoleProps> = ConsoleProps => {
         style={{ fontWeight: 'bold', fontSize: '1.5em', width: '100%' }}
         commands={{
           'about-me': () => <Redirect push to="/aboutme" />,
+          'About-me': () => <Redirect push to="/aboutme" />,
           github: () => <Redirect push to="/github" />,
+          Github: () => <Redirect push to="/github" />,
           linkedin: () => <Redirect push to="/linkedin" />,
+          Linkedin: () => <Redirect push to="/linkedin" />,
           help: betterHelpCommand,
+          Help: betterHelpCommand,
           shutdown: () => 'what exactly do you think you are doing? 👀',
+          Shutdown: () => 'what exactly do you think you are doing? 👀',
           sudo: () => (
+            <img
+              src="https://i.imgur.com/fVDH5bN.gif"
+              width="100%"
+              alt="credit goes to u/BigMurph26 https://i.imgur.com/fVDH5bN.gif"
+            />
+          ),
+          Sudo: () => (
             <img
               src="https://i.imgur.com/fVDH5bN.gif"
               width="100%"
