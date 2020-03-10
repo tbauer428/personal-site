@@ -1,3 +1,7 @@
-this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+personal website  
 
-personal site
+
+Tech Stack:
+
+Typescript
+React
