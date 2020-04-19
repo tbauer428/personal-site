@@ -8,7 +8,7 @@ interface RibbonProps {
   theme: string;
 }
 
-const Ribbon: React.FC<RibbonProps> = ribbonProps => {
+const Ribbon: React.FC<RibbonProps> = (ribbonProps) => {
   const toggleTheme = () => {
     if (ribbonProps.theme === 'light') {
       ribbonProps.toggleTheme('dark');
@@ -19,7 +19,7 @@ const Ribbon: React.FC<RibbonProps> = ribbonProps => {
 
   let photoURL = getGravatarURL({
     email: 'tom.bauer95@gmail.com',
-    size: 1024
+    size: 1024,
   });
 
   const Img = styled.img`
@@ -41,7 +41,7 @@ const Ribbon: React.FC<RibbonProps> = ribbonProps => {
       style={{
         fontSize: '2rem',
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
       }}
     >
       <div
@@ -49,11 +49,18 @@ const Ribbon: React.FC<RibbonProps> = ribbonProps => {
           width: '33.33%',
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
         }}
         onClick={() => <Redirect push to="/console" />}
       >
-        journey to dev
+        <a
+          href="/console"
+          style={{
+            color: ribbonProps.theme === 'light' ? '#363537' : '#FAFAFA',
+          }}
+        >
+          journey to dev
+        </a>
       </div>
 
       <div
@@ -61,17 +68,19 @@ const Ribbon: React.FC<RibbonProps> = ribbonProps => {
           width: '33.33%',
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
         }}
       >
-        <Img src={photoURL} alt="Me" />
+        <a href="https://www.linkedin.com/in/thomas-bauer-a02988116/">
+          <Img src={photoURL} alt="Me" />
+        </a>
       </div>
       <div
         style={{
           width: '33.33%',
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
         }}
       >
         <Button onClick={() => toggleTheme()}>
