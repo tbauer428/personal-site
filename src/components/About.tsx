@@ -1,7 +1,5 @@
 import React from 'react';
-import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
-import BackButton from '../components/BackButton';
 
 const About: React.FC = () => {
 

@@ -6,7 +6,6 @@ import { GlobalStyles } from './theme/global';
 import Ribbon from './components/Ribbon';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Console from './pages/Console';
-import Footer from './components/Footer';
 import About from './components/About';
 
 const App = () => {
