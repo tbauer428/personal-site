@@ -17,7 +17,6 @@ const Footer: React.FC<FooterProps> = FooterProps => {
             width="16px"
             alt="GitHub Logo"
           ></img>{' '}
-          github
         </a>
       </div>
     </footer>

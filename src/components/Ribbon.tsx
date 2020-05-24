@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import getGravatarURL from '../utils/getGravatarURL';
 import { Redirect } from 'react-router';
+import Typist from "react-typist";
 
 interface RibbonProps {
   toggleTheme: (theme: string) => void;
@@ -59,7 +60,12 @@ const Ribbon: React.FC<RibbonProps> = (ribbonProps) => {
             color: ribbonProps.theme === 'light' ? '#363537' : '#FAFAFA',
           }}
         >
-          journey to dev
+          <Typist 
+            cursor={{
+              "element": "_",
+              "blink": true
+            }
+          }>journey to dev</Typist>
         </a>
       </div>
 
@@ -71,9 +77,7 @@ const Ribbon: React.FC<RibbonProps> = (ribbonProps) => {
           alignItems: 'center',
         }}
       >
-        <a href="https://www.linkedin.com/in/thomas-bauer-a02988116/">
           <Img src={photoURL} alt="Me" />
-        </a>
       </div>
       <div
         style={{
