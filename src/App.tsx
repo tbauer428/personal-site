@@ -7,7 +7,7 @@ import Ribbon from './components/Ribbon';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Console from './pages/Console';
 import Footer from './components/Footer';
-import AboutMe from './pages/AboutMe';
+import About from './components/About';
 
 const App = () => {
   const [theme, setTheme] = useState<string>('dark');
@@ -40,7 +40,6 @@ const App = () => {
               path="/console"
               render={() => <Console theme={theme} />}
             />
-            <Route exact path="/aboutme" render={() => <AboutMe />} />
             <Route
               exact
               path="/linkedin"
@@ -63,8 +62,9 @@ const App = () => {
             />
           </Switch>
         </div>
+        
+        <About/>
 
-        <Footer theme={theme} />
       </div>
     </ThemeProvider>
   );

@@ -62,10 +62,12 @@ const Ribbon: React.FC<RibbonProps> = (ribbonProps) => {
         >
           <Typist 
             cursor={{
-              "element": "_",
+              "element": "",
               "blink": true
             }
-          }>journey to dev</Typist>
+          }>
+            journey to dev
+          </Typist>
         </a>
       </div>
 

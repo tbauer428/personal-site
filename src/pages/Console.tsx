@@ -30,8 +30,9 @@ const Console: React.FC<ConsoleProps> = ConsoleProps => {
         barColor={'gray'}
         style={{ fontWeight: 'bold', fontSize: '1.5em', width: '100%' }}
         commands={{
-          'about-me': () => <Redirect push to="/aboutme" />,
-          'About-me': () => <Redirect push to="/aboutme" />,
+          // trying something new with the aboutMe section
+          // 'about-me': () => <Redirect push to="/aboutme" />,
+          // 'About-me': () => <Redirect push to="/aboutme" />,
           github: () => <Redirect push to="/github" />,
           Github: () => <Redirect push to="/github" />,
           linkedin: () => <Redirect push to="/linkedin" />,
