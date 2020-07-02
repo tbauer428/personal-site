@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import getGravatarURL from '../utils/getGravatarURL';
 import { Redirect } from 'react-router';
-import Typist from "react-typist";
+import Typist from 'react-typist';
 
 interface RibbonProps {
   toggleTheme: (theme: string) => void;
@@ -43,13 +43,15 @@ const Ribbon: React.FC<RibbonProps> = (ribbonProps) => {
         fontSize: '2rem',
         display: 'flex',
         justifyContent: 'space-between',
+        // flexDirection: 'column',
+        // height: '50vh',
       }}
     >
       <div
         style={{
           width: '33.33%',
           display: 'flex',
-          justifyContent: 'center',
+          // justifyContent: 'center',
           alignItems: 'center',
         }}
         onClick={() => <Redirect push to="/console" />}
@@ -60,12 +62,12 @@ const Ribbon: React.FC<RibbonProps> = (ribbonProps) => {
             color: ribbonProps.theme === 'light' ? '#363537' : '#FAFAFA',
           }}
         >
-          <Typist 
+          <Typist
             cursor={{
-              "element": "",
-              "blink": true
-            }
-          }>
+              element: '',
+              blink: true,
+            }}
+          >
             journey to dev
           </Typist>
         </a>
@@ -79,9 +81,9 @@ const Ribbon: React.FC<RibbonProps> = (ribbonProps) => {
           alignItems: 'center',
         }}
       >
-          <Img src={photoURL} alt="Me" />
+        <Img src={photoURL} alt="Me" />
       </div>
-      <div
+      {/* <div
         style={{
           width: '33.33%',
           display: 'flex',
@@ -92,7 +94,7 @@ const Ribbon: React.FC<RibbonProps> = (ribbonProps) => {
         <Button onClick={() => toggleTheme()}>
           {ribbonProps.theme === 'light' ? '🌚' : '🌞'}
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 };
